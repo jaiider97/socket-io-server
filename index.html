@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cliente WebSocket</title>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.js"></script>
+  <script>
+    const socket = io.connect('http://127.0.0.1:8080');
+
+    // Envía un mensaje al servidor
+    socket.emit('mensaje', 'Hola, servidor!');
+
+    // Escucha mensajes del servidor
+    socket.on('mensaje', (mensaje) => {
+      console.log('Mensaje del servidor:', mensaje);
+    });
+  </script>
+</head>
+<body>
+  <h1>Cliente WebSocket</h1>
+</body>
+</html>
